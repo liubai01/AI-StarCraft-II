@@ -27,5 +27,5 @@ python3 my_easy_TVT
 
 **Update Log:**
 
-2018/11/15: backbone of this project. Realize detection the center of build(currently command center) by `lib/building/get_building_center(obs)`. Realize basic agent in agent_Alpha.
+2018/11/15: backbone of this project. Realize detection the center of build(currently command center) by `lib/building/get_building_center(<obs>, <uid>)`. Realize basic agent in agent_Alpha.
 

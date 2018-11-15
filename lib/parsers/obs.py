@@ -1,10 +1,20 @@
-from pysc2.lib import actions, units
 from lib.enums import feature_mini_id, feature_screen_id
 from lib.building import load_building_template_by_id
 
 import numpy as np
 
+
+__all__ = ["get_building_center"]
+
 def find_units_by_id(obs, uid):
+    """
+    output a list  contain the coordinations of the pixels occupied by target
+    unit in local camera
+    :param obs: the observation provided in baseAgent.step as input
+    :param uid: id of that unit(defined in pysc2.lib.units)
+    :return: the valid unit coordinations in list
+    xys = [<x1, y1>, <x2, y2>, ...]
+    """
     ret = []
 
     observation = obs.observation
@@ -48,7 +58,14 @@ def grid2xys(grid, x_min, y_min):
 
 VALID_BUILDING_THRESHOLD = 0.9
 
-def obs2building_center(obs, uid):
+def get_building_center(obs, uid):
+    """
+    get the center of the building
+    :param obs: the observation provided in baseAgent.step as input
+    :param uid: id of that building(defined in pysc2.lib.units)
+    :return: the coordination of the target building which is almost completely in the camera
+    e.g: [(x1, y1), (x2, y2), ...]
+    """
     ret = []
     xys = find_units_by_id(obs, uid)
     template = load_building_template_by_id(uid)

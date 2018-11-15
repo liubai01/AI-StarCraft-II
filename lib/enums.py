@@ -1,5 +1,8 @@
 from easydict import EasyDict as edict
 
+# the corresponding semantics to the index of
+# obs.observation.feature_minimap and obs.observation.feature_screen
+
 feature_mini_id = edict()
 feature_mini_id.HEIGHT_MAP = 0
 feature_mini_id.VISIBILITY = 1
