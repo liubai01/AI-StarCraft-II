@@ -4,7 +4,7 @@ from lib.building import load_building_template_by_id
 import numpy as np
 
 
-__all__ = ["get_building_center"]
+__all__ = ["get_building_center", "find_units_by_id"]
 
 def find_units_by_id(obs, uid):
     """
